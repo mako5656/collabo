@@ -24,6 +24,33 @@ h1{
  	font-size: 300%;
 }
 
+
+.area {
+    width: 2000px;
+    border: 8px solid #ddd;
+    overflow: hidden;
+    text-align:center;
+}
+.marquee {
+    width: 1000px;
+    padding-left: 1000px;
+    white-space: nowrap;
+
+    animation-name: marquee;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes marquee {
+    from{
+    	transform: translate(0%);
+    }
+    100%,to{
+    	transform: translate(-100%); 
+    }
+}
+
+
 h2{
 	color:black;
 	text-align:center;
