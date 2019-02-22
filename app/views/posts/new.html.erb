@@ -1,0 +1,22 @@
+<h1>Articles#new</h1>
+
+<%= form_for @article, :url => {:action => 'create'} do |f| %>
+
+    <h4>タイトル</h4>
+    <%= f.text_field :title %>
+
+
+    <h4>天気本文</h4>
+    <%= f.text_area :weather%>
+
+
+    <h4>投稿した時間</h4>
+    <%= f.text_field :body %>
+
+    <h4>画像</h4>
+    <%= f.attachment_field :image %>
+
+
+    <%= f.submit '投稿' %>
+
+<% end %>

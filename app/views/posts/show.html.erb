@@ -1,0 +1,18 @@
+<table class="table">
+  <tr>
+    <th>タイトル</th>
+    <th>天気</th>
+    <th>本文</th>
+    <th>画像</th>
+  </tr>
+  <tr>
+    <td><%= @article.title %></td>
+    <td><%= @article.weather %></td>
+    <td><%= @article.body %></td>
+    <td><%= attachment_image_tag @article, :image, :fill, 100, 100, format: 'jpeg' %></td>
+  </tr>
+</table>
+
+<%= link_to "編集", edit_post_path(@article.id) %>
+<%= link_to "削除", destroy_post_path(@article.id), method: :delete, "data-confirm" => "削除しますか？" %>
+

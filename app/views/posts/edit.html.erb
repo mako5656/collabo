@@ -1,0 +1,16 @@
+<h1>編集画面</h1>
+<%= form_for @article, :url => {:action => 'update'} do |f| %>
+    <h4>タイトル</h4>
+    <%= f.text_field :title %>
+
+    <h4>天気本文</h4>
+    <%= f.text_area :weather%>
+
+    <h4>投稿した時間</h4>
+    <%= f.text_area :body %>
+
+    <h4>画像</h4>
+  	<%= f.attachment_field :image %>
+
+	<%= f.submit '保存' %>
+<% end %>

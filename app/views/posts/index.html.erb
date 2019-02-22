@@ -1,0 +1,35 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+			<%= form_for @article, :url => {:action => 'create'} do |f| %>
+				<h4>タイトル</h4>
+		    		<%= f.text_field :title %>
+				<h4>天気本文</h4>
+		    		<%= f.text_area :weather%>
+				<h4>投稿した時間</h4>
+		    		<%= f.text_field :body %>
+		    	<h4>画像</h4>
+  					<%= f.attachment_field :image %>
+				<%= f.submit '投稿' %>
+		</div>
+	<div class="col-md-8">
+
+
+	<h1>投稿一覧</h1>
+	<table class="table">
+		<tr>
+			<th>タイトル</th>
+			<th>天気</th>
+			<th>本文</th>
+			<th>画像</th>
+		</tr>
+		<% @articles.each do |article| %>
+		<tr>
+			<th><%=link_to article.title, "/posts/#{article.id}" %></th>
+			<td><%=link_to article.weather, "/posts/#{article.id}" %></td>
+			<td><%=link_to article.body , "/posts/#{article.id}" %></td>
+			<td><%= attachment_image_tag(article, :image, :fill, 30, 30, fallback: "sample.png", size: "30x30") %></td>
+		</tr>
+		<% end %>
+	</table>
+<% end %>
