@@ -21,33 +21,35 @@ body {
 h1{
  	color:red;
  	text-align:center;
- 	font-size: 300%;
+ 	font-size: 200%;
 }
 
 
-.area {
-    width: 2000px;
-    border: 8px solid #ddd;
-    overflow: hidden;
-    text-align:center;
-}
 .marquee {
-    width: 1000px;
-    padding-left: 1000px;
-    white-space: nowrap;
-
-    animation-name: marquee;
-    animation-duration: 7s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  overflow: hidden;
+  position: relative;
+}
+.marquee::after {
+  content: "";
+  white-space: nowrap;
+  display: inline-block;
+}
+.marquee > .marquee-inner {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+.marquee > .marquee-inner:hover {
+  animation-play-state: paused;
+  cursor: default;
 }
 @keyframes marquee {
-    from{
-    	transform: translate(0%);
-    }
-    100%,to{
-    	transform: translate(-100%); 
-    }
+    0% { left: 100%; transform: translate(0); }
+  100% { left: 0; transform: translate(-100%); }
 }
 
 

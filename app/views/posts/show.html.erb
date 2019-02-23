@@ -9,7 +9,7 @@
     <td><%= @article.title %></td>
     <td><%= @article.weather %></td>
     <td><%= @article.body %></td>
-    <td><%= attachment_image_tag @article, :image, :fill, 100, 100, format: 'jpeg' %></td>
+    <td><%= attachment_image_tag(@article, :image, :fill, 30, 30, fallback: "sample.png", size: "30x30") %></td>
   </tr>
 </table>
 
