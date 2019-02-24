@@ -4,9 +4,9 @@
 			<%= form_for @article, :url => {:action => 'create'} do |f| %>
 				<h4>タイトル</h4>
 		    		<%= f.text_field :title %>
-				<h4>天気本文</h4>
+				<h4>天気</h4>
 		    		<%= f.text_area :weather%>
-				<h4>投稿した時間</h4>
+				<h4>本文</h4>
 		    		<%= f.text_field :body %>
 		    	<h4>画像</h4>
   					<%= f.attachment_field :image %>
